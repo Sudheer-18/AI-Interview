@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || 'your-gemini-api-key');
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyCltEy1jhZOfKXGDzYVuuX3D_s1dCKOmgA');
 
 export interface AnswerAnalysis {
   score: number; // 0-5
@@ -17,11 +17,11 @@ export const analyzeAnswer = async (
 ): Promise<AnswerAnalysis> => {
   try {
     // For demo purposes, return mock analysis if API key is not set
-    if (!import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY === 'your-gemini-api-key') {
+    if (!import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY === 'AIzaSyCltEy1jhZOfKXGDzYVuuX3D_s1dCKOmgA') {
       return generateMockAnalysis(answer);
     }
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-flash-2.5' });
 
     const prompt = `
 You are an expert interviewer analyzing a candidate's answer. Please evaluate the following interview response:

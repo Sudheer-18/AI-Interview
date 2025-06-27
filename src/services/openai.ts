@@ -8,7 +8,7 @@ const openai = new OpenAI({
 export const generateInterviewQuestions = async (topic: string): Promise<string[]> => {
   try {
    
-    if (!openai.apiKey || openai.apiKey === 'your-openai-api-key') {
+    if (!openai.apiKey || openai.apiKey === 'AIzaSyCltEy1jhZOfKXGDzYVuuX3D_s1dCKOmgA') {
       return generateMockQuestions(topic);
     }
 
